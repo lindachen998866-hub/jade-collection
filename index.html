@@ -1,1 +1,797 @@
 
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>玉器收藏｜高端翡翠珠寶形象展示</title>
+  <meta name="description" content="高端翡翠珠寶收藏網站，展示天然翡翠、玉石珠寶、私人鑑賞與一對一諮詢。" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #07110f;
+      --bg-soft: #0e1f1a;
+      --card: #122820;
+      --gold: #d6b36a;
+      --gold-soft: rgba(214, 179, 106, 0.16);
+      --text: #f4efe4;
+      --muted: #b9ad99;
+      --line: rgba(214, 179, 106, 0.18);
+      --green: #1f6b56;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", "Noto Serif TC", sans-serif;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(31, 107, 86, 0.18), transparent 35%),
+        radial-gradient(circle at 85% 20%, rgba(214, 179, 106, 0.12), transparent 32%),
+        linear-gradient(180deg, #07110f 0%, #0a1713 55%, #050d0b 100%);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(7, 17, 15, 0.78);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      height: 74px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, #ffe4a0, #d6b36a 35%, #4b3a1f 72%, #0e1f1a);
+      box-shadow: 0 0 0 1px rgba(214, 179, 106, 0.45);
+    }
+
+    .brand-text strong {
+      display: block;
+      font-family: "Noto Serif TC", serif;
+      letter-spacing: 0.14em;
+      font-size: 18px;
+    }
+
+    .brand-text span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 14px;
+      color: rgba(244, 239, 228, 0.84);
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links a {
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(214, 179, 106, 0.4);
+      color: var(--gold);
+      background: rgba(214, 179, 106, 0.08);
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 150px 0 90px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(7, 17, 15, 0.96) 0%, rgba(7, 17, 15, 0.78) 48%, rgba(7, 17, 15, 0.3) 100%),
+        url("https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1800&q=85") center right / cover no-repeat;
+      opacity: 0.72;
+      z-index: -2;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      right: -220px;
+      bottom: -250px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(214, 179, 106, 0.22), transparent 66%);
+      z-index: -1;
+    }
+
+    .hero-content {
+      max-width: 740px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 0.22em;
+      font-size: 13px;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(46px, 8vw, 86px);
+      line-height: 1.12;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: rgba(244, 239, 228, 0.84);
+      font-size: clamp(17px, 2.2vw, 22px);
+      letter-spacing: 0.06em;
+      margin-bottom: 38px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      transition: 0.25s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #07110f;
+      box-shadow: 0 18px 44px rgba(214, 179, 106, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(244, 239, 228, 0.28);
+      color: var(--text);
+      background: rgba(244, 239, 228, 0.04);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    section {
+      padding: 96px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 32px;
+      margin-bottom: 44px;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.25;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    .section-desc {
+      max-width: 460px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .intro-card {
+      padding: 42px;
+      border-radius: 32px;
+      background: linear-gradient(145deg, rgba(18, 40, 32, 0.92), rgba(9, 23, 19, 0.94));
+      border: 1px solid var(--line);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.32);
+    }
+
+    .intro-card p {
+      color: rgba(244, 239, 228, 0.83);
+      font-size: 17px;
+      margin-bottom: 22px;
+    }
+
+    .intro-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .value-item {
+      padding: 26px;
+      border-radius: 26px;
+      background: rgba(18, 40, 32, 0.68);
+      border: 1px solid var(--line);
+    }
+
+    .value-item h3 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 21px;
+      color: var(--text);
+      margin-bottom: 8px;
+      letter-spacing: 0.06em;
+    }
+
+    .value-item p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 26px;
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      padding: 70px 24px;
+      text-align: center;
+      border-radius: 32px;
+      border: 1px dashed rgba(214, 179, 106, 0.3);
+      background: rgba(18, 40, 32, 0.45);
+      color: var(--muted);
+    }
+
+    .empty-state strong {
+      display: block;
+      font-family: "Noto Serif TC", serif;
+      color: var(--gold);
+      font-size: 24px;
+      margin-bottom: 10px;
+      letter-spacing: 0.08em;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .category-card {
+      min-height: 130px;
+      padding: 22px 16px;
+      border-radius: 26px;
+      background: rgba(18, 40, 32, 0.68);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.25s;
+    }
+
+    .category-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(214, 179, 106, 0.48);
+    }
+
+    .category-card span {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .category-card h3 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 20px;
+      letter-spacing: 0.06em;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .trust-card {
+      padding: 30px 24px;
+      border-radius: 28px;
+      background: rgba(18, 40, 32, 0.62);
+      border: 1px solid var(--line);
+    }
+
+    .trust-card .num {
+      color: var(--gold);
+      font-family: "Noto Serif TC", serif;
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .trust-card h3 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 21px;
+      margin-bottom: 10px;
+      letter-spacing: 0.06em;
+    }
+
+    .trust-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-placeholder {
+      aspect-ratio: 1 / 1;
+      border-radius: 28px;
+      background:
+        linear-gradient(145deg, rgba(18, 40, 32, 0.82), rgba(7, 17, 15, 0.92));
+      border: 1px dashed rgba(214, 179, 106, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(244, 239, 228, 0.42);
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+    }
+
+    .contact-box {
+      border-radius: 38px;
+      padding: 52px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(31, 107, 86, 0.24), transparent 32%),
+        linear-gradient(145deg, rgba(18, 40, 32, 0.95), rgba(7, 17, 15, 0.95));
+      border: 1px solid rgba(214, 179, 106, 0.25);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.3);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .contact-box h2 {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(30px, 4vw, 46px);
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin-bottom: 26px;
+    }
+
+    .contact-info {
+      color: rgba(244, 239, 228, 0.78);
+      font-size: 15px;
+      line-height: 2;
+    }
+
+    footer {
+      padding: 36px 0;
+      color: rgba(244, 239, 228, 0.48);
+      font-size: 13px;
+      text-align: center;
+      letter-spacing: 0.06em;
+    }
+
+    .floating-line {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 80;
+      padding: 13px 18px;
+      border-radius: 999px;
+      background: #06c755;
+      color: #fff;
+      font-weight: 700;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.32);
+      transition: 0.25s;
+    }
+
+    .floating-line:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        display: none;
+      }
+
+      .intro-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .trust-grid,
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .hero {
+        padding: 130px 0 70px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-desc {
+        margin-top: 16px;
+      }
+
+      .product-grid,
+      .category-grid,
+      .trust-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .value-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-card,
+      .contact-box {
+        padding: 30px 22px;
+      }
+
+      .floating-line {
+        left: 18px;
+        right: 18px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">
+        <div class="brand-logo"></div>
+        <div class="brand-text">
+          <strong>玉器收藏</strong>
+          <span>Jade Collection</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">品牌理念</a>
+        <a href="#products">典藏作品</a>
+        <a href="#category">作品分類</a>
+        <a href="#trust">鑑賞服務</a>
+        <a href="#contact" class="nav-cta">預約諮詢</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">Private Jade Collection</div>
+        <h1>高端翡翠<br>珠寶收藏</h1>
+        <p>
+          以天然玉石之溫潤，呈現東方珠寶美學。每一件作品皆重視質地、色澤、雕工與收藏價值，適合私人鑑賞與長期珍藏。
+        </p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">瀏覽典藏作品</a>
+          <a href="#contact" class="btn btn-ghost">預約一對一鑑賞</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Brand Philosophy</div>
+            <h2 class="section-title">不急於販售，<br>更重視作品本身的氣韻</h2>
+          </div>
+          <p class="section-desc">
+            網站定位為高端翡翠珠寶形象展示，呈現作品、品牌理念與私人鑑賞服務，避免過度商業化的促銷感。
+          </p>
+        </div>
+
+        <div class="intro-grid">
+          <div class="intro-card">
+            <p>
+              玉石之美，不只在於價格，更在於其天然紋理、溫潤質感與時間沉澱出的獨特氣韻。
+            </p>
+            <p>
+              我們希望用更安靜、乾淨、有質感的方式呈現每件作品，讓瀏覽者能慢慢看、慢慢感受，而不是被過多資訊打擾。
+            </p>
+          </div>
+
+          <div class="value-grid">
+            <div class="value-item">
+              <h3>天然甄選</h3>
+              <p>重視種水、色澤、完整度與作品整體美感。</p>
+            </div>
+            <div class="value-item">
+              <h3>高端質感</h3>
+              <p>以深翡翠綠、香檳金與留白建立舒適視覺。</p>
+            </div>
+            <div class="value-item">
+              <h3>私人鑑賞</h3>
+              <p>不做低價促銷，以一對一諮詢建立信任。</p>
+            </div>
+            <div class="value-item">
+              <h3>收藏導向</h3>
+              <p>以長期收藏、佩戴美學與送禮價值為核心。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Selected Works</div>
+            <h2 class="section-title">典藏作品</h2>
+          </div>
+          <p class="section-desc">
+            此區目前先保留空白，之後可以放你的珠寶商品、圖片、價格、介紹與諮詢按鈕。
+          </p>
+        </div>
+
+        <div class="product-grid">
+          <div class="empty-state">
+            <strong>典藏作品整理中</strong>
+            目前尚未上架商品，後續可放入翡翠手鐲、掛件、戒面、珠鏈、雕件與收藏級臻品
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="category">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Collection Category</div>
+            <h2 class="section-title">作品分類</h2>
+          </div>
+          <p class="section-desc">
+            先保留分類架構，之後商品多起來時，網站會更好整理，也更像正式高端珠寶品牌頁。
+          </p>
+        </div>
+
+        <div class="category-grid">
+          <div class="category-card">
+            <span>01</span>
+            <h3>翡翠手鐲</h3>
+          </div>
+          <div class="category-card">
+            <span>02</span>
+            <h3>翡翠掛件</h3>
+          </div>
+          <div class="category-card">
+            <span>03</span>
+            <h3>翡翠戒面</h3>
+          </div>
+          <div class="category-card">
+            <span>04</span>
+            <h3>翡翠珠鏈</h3>
+          </div>
+          <div class="category-card">
+            <span>05</span>
+            <h3>雕件擺件</h3>
+          </div>
+          <div class="category-card">
+            <span>06</span>
+            <h3>收藏臻品</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trust">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Private Service</div>
+            <h2 class="section-title">鑑賞與服務</h2>
+          </div>
+          <p class="section-desc">
+            高端珠寶網站不需要過度促銷，重要的是讓客戶感覺專業、安心、有質感。
+          </p>
+        </div>
+
+        <div class="trust-grid">
+          <div class="trust-card">
+            <div class="num">01</div>
+            <h3>天然玉石</h3>
+            <p>注重作品的天然質感、色澤表現與收藏條件。</p>
+          </div>
+          <div class="trust-card">
+            <div class="num">02</div>
+            <h3>鑑賞諮詢</h3>
+            <p>可依預算、用途與喜好提供一對一作品建議。</p>
+          </div>
+          <div class="trust-card">
+            <div class="num">03</div>
+            <h3>細節展示</h3>
+            <p>後續可加入近拍、佩戴圖、證書圖與包裝圖。</p>
+          </div>
+          <div class="trust-card">
+            <div class="num">04</div>
+            <h3>預約服務</h3>
+            <p>以 Line 或 Email 進行私人鑑賞與作品詢問。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Gallery</div>
+            <h2 class="section-title">典藏畫廊</h2>
+          </div>
+          <p class="section-desc">
+            這裡之後可以放翡翠近拍、佩戴圖、禮盒、展廳與作品細節圖。
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-placeholder">圖片預留區</div>
+          <div class="gallery-placeholder">圖片預留區</div>
+          <div class="gallery-placeholder">圖片預留區</div>
+          <div class="gallery-placeholder">圖片預留區</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="border-bottom: none;">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <div class="section-kicker">Contact</div>
+            <h2>預約私人鑑賞</h2>
+            <p>
+              若對作品有興趣，可透過 Line 或 Email 進一步詢問。此區目前先保留，之後再放入你的正式聯絡方式。
+            </p>
+            <a href="#" class="btn btn-primary">Line 諮詢連結預留</a>
+          </div>
+
+          <div class="contact-info">
+            <div>Line ID：尚未設定</div>
+            <div>Email：尚未設定</div>
+            <div>服務方式：一對一作品諮詢、預約鑑賞、收藏建議</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 玉器收藏 Jade Collection｜高端翡翠珠寶形象展示網站
+  </footer>
+
+  <a href="#contact" class="floating-line">LINE 諮詢</a>
+</body>
+</html>
