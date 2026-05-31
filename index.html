@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
   <title>璽玥珠寶訂製｜Xiyue Jewelry Atelier</title>
-  <meta name="description" content="璽玥珠寶訂製 Xiyue Jewelry Atelier，專注天然寶石、翡翠與高端珠寶私人訂製。" />
+  <meta name="description" content="璽玥珠寶訂製 Xiyue Jewelry Atelier，專注天然寶石、翡翠、黃金飾品與高端珠寶私人訂製。" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,11 +112,10 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 34px;
-      font-size: 12px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(247, 240, 230, 0.78);
+      gap: 28px;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      color: rgba(247, 240, 230, 0.82);
     }
 
     .nav-links a {
@@ -131,6 +130,41 @@
       border: 1px solid rgba(185, 154, 98, 0.55);
       padding: 10px 18px;
       border-radius: 999px;
+      color: var(--champagne);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px;
+      border: 1px solid rgba(245, 239, 229, 0.14);
+      border-radius: 999px;
+      background: rgba(245, 239, 229, 0.04);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: rgba(247, 240, 230, 0.6);
+      padding: 7px 9px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      transition: 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .lang-btn:hover,
+    .lang-btn.active {
+      background: rgba(185, 154, 98, 0.18);
       color: var(--champagne);
     }
 
@@ -173,7 +207,6 @@
         radial-gradient(circle at 36% 28%, rgba(255, 255, 255, 0.16), transparent 12%),
         radial-gradient(circle at 50% 55%, rgba(185, 154, 98, 0.24), transparent 34%),
         radial-gradient(circle at 50% 50%, rgba(18, 55, 47, 0.88), rgba(6, 6, 6, 0.24) 62%, transparent 70%);
-      filter: blur(0.2px);
       opacity: 0.68;
     }
 
@@ -200,7 +233,7 @@
 
     .eyebrow {
       font-size: 12px;
-      letter-spacing: 0.32em;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--champagne);
       margin-bottom: 28px;
@@ -225,8 +258,8 @@
     }
 
     .hero-copy {
-      max-width: 560px;
-      color: rgba(247, 240, 230, 0.72);
+      max-width: 600px;
+      color: rgba(247, 240, 230, 0.74);
       font-size: 17px;
       letter-spacing: 0.06em;
       margin-bottom: 42px;
@@ -247,8 +280,7 @@
       padding: 13px 24px;
       border-radius: 999px;
       font-size: 13px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
+      letter-spacing: 0.14em;
       transition: 0.25s ease;
       cursor: pointer;
     }
@@ -309,14 +341,14 @@
     }
 
     .hero-visual::after {
-      content: "IMAGE RESERVED";
+      content: attr(data-placeholder);
       position: absolute;
       left: 50%;
       bottom: 42px;
       transform: translateX(-50%);
       color: rgba(245, 239, 229, 0.28);
-      font-size: 11px;
-      letter-spacing: 0.24em;
+      font-size: 12px;
+      letter-spacing: 0.18em;
     }
 
     .section {
@@ -339,30 +371,31 @@
     .section-label {
       color: var(--champagne);
       font-size: 12px;
-      letter-spacing: 0.28em;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
       margin-bottom: 18px;
     }
 
     .section-title {
-      font-family: "Cormorant Garamond", "Noto Serif TC", serif;
-      font-size: clamp(42px, 6vw, 78px);
+      font-family: "Noto Serif TC", "Cormorant Garamond", serif;
+      font-size: clamp(34px, 5vw, 58px);
       font-weight: 500;
-      line-height: 1;
-      letter-spacing: 0.03em;
+      line-height: 1.16;
+      letter-spacing: 0.08em;
     }
 
-    .section-title .zh {
+    .section-title .en {
       display: block;
-      font-family: "Noto Serif TC", serif;
-      font-size: clamp(28px, 3.2vw, 42px);
-      letter-spacing: 0.16em;
-      margin-top: 18px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(34px, 5vw, 68px);
+      letter-spacing: 0.04em;
+      margin-top: 16px;
+      color: inherit;
     }
 
     .section-desc {
       color: var(--muted-dark);
-      max-width: 560px;
+      max-width: 580px;
       font-size: 16px;
       letter-spacing: 0.04em;
     }
@@ -409,15 +442,14 @@
     }
 
     .maison-card::after {
-      content: "Atelier Image";
+      content: attr(data-placeholder);
       position: absolute;
       left: 50%;
       bottom: 34px;
       transform: translateX(-50%);
       color: rgba(245,239,229,0.35);
       font-size: 12px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
+      letter-spacing: 0.18em;
     }
 
     .journey {
@@ -456,8 +488,8 @@
 
     .collection-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
     }
 
     .collection-card {
@@ -484,8 +516,8 @@
     .collection-image::before {
       content: "";
       position: absolute;
-      width: 120px;
-      height: 120px;
+      width: 118px;
+      height: 118px;
       left: 50%;
       top: 42%;
       transform: translate(-50%, -50%) rotate(45deg);
@@ -497,33 +529,63 @@
     }
 
     .collection-image::after {
-      content: "IMAGE RESERVED";
+      content: attr(data-placeholder);
       position: absolute;
       left: 50%;
       bottom: 26px;
       transform: translateX(-50%);
       color: rgba(22,20,17,0.28);
-      font-size: 10px;
-      letter-spacing: 0.2em;
+      font-size: 11px;
+      letter-spacing: 0.16em;
       white-space: nowrap;
     }
 
+    .collection-image.gem::before {
+      background:
+        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.7), transparent 12%),
+        radial-gradient(circle at 50% 50%, #8b3f63, #35111f 70%);
+    }
+
+    .collection-image.gold {
+      background:
+        radial-gradient(circle at 50% 40%, rgba(255, 226, 154, 0.34), transparent 24%),
+        linear-gradient(145deg, #efe0c1, #fffaf2);
+    }
+
+    .collection-image.gold::before {
+      width: 142px;
+      height: 142px;
+      border-radius: 50%;
+      background: transparent;
+      border: 15px solid #c9a35d;
+      transform: translate(-50%, -50%) rotate(0deg);
+      box-shadow:
+        inset 0 0 22px rgba(255,255,255,0.36),
+        0 20px 55px rgba(139,100,39,0.22);
+    }
+
+    .collection-image.bridal::before {
+      background:
+        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.86), transparent 14%),
+        radial-gradient(circle at 50% 50%, #f2eee7, #b9b3aa 68%);
+    }
+
     .collection-body {
-      padding: 30px;
+      padding: 28px;
     }
 
     .collection-body span {
       display: block;
       color: var(--champagne);
       font-size: 12px;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       margin-bottom: 14px;
     }
 
     .collection-body h3 {
       font-family: "Noto Serif TC", serif;
-      font-size: 24px;
+      font-size: 23px;
       letter-spacing: 0.12em;
       margin-bottom: 12px;
       font-weight: 500;
@@ -541,7 +603,7 @@
       gap: 12px;
       color: var(--text-dark);
       font-size: 12px;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
@@ -583,15 +645,15 @@
 
     .material-card {
       border: 1px solid var(--line-light);
-      padding: 36px;
-      min-height: 168px;
+      padding: 34px;
+      min-height: 150px;
       background: rgba(245,239,229,0.035);
     }
 
     .material-card h3,
     .material-feature h3 {
       font-family: "Cormorant Garamond", "Noto Serif TC", serif;
-      font-size: 38px;
+      font-size: 36px;
       font-weight: 500;
       margin-bottom: 12px;
     }
@@ -653,18 +715,19 @@
     }
 
     .appointment h2 {
-      font-family: "Cormorant Garamond", "Noto Serif TC", serif;
-      font-size: clamp(48px, 7vw, 86px);
-      line-height: 1;
+      font-family: "Noto Serif TC", "Cormorant Garamond", serif;
+      font-size: clamp(36px, 5vw, 60px);
+      line-height: 1.16;
       font-weight: 500;
       margin-bottom: 28px;
+      letter-spacing: 0.08em;
     }
 
     .appointment h2 span {
       display: block;
-      font-family: "Noto Serif TC", serif;
-      font-size: clamp(28px, 3.4vw, 42px);
-      letter-spacing: 0.16em;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 6vw, 78px);
+      letter-spacing: 0.04em;
       margin-top: 18px;
     }
 
@@ -725,6 +788,10 @@
       display: none;
     }
 
+    .mobile-lang-switch {
+      display: none;
+    }
+
     @media (max-width: 1040px) {
       .hero-grid,
       .section-head,
@@ -738,10 +805,7 @@
         min-height: 440px;
       }
 
-      .journey {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
+      .journey,
       .collection-grid,
       .standards-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -775,16 +839,31 @@
         display: block;
         padding: 14px 0;
         color: rgba(247,240,230,0.8);
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        font-size: 13px;
+        letter-spacing: 0.14em;
+        font-size: 14px;
         border-bottom: 1px solid rgba(245,239,229,0.08);
+      }
+
+      .mobile-lang-switch {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding-top: 18px;
+      }
+
+      .mobile-lang-switch .lang-btn {
+        border: 1px solid rgba(245, 239, 229, 0.14);
+        background: rgba(245, 239, 229, 0.04);
       }
     }
 
     @media (max-width: 700px) {
       .container {
         width: min(100% - 28px, 1180px);
+      }
+
+      .nav-actions > .lang-switch {
+        display: none;
       }
 
       .hero {
@@ -850,23 +929,39 @@
       </a>
 
       <div class="nav-links">
-        <a href="#maison">Maison</a>
-        <a href="#bespoke">Bespoke</a>
-        <a href="#collections">Collections</a>
-        <a href="#materials">Materials</a>
-        <a href="#appointment" class="nav-appointment">Appointment</a>
+        <a href="#maison" data-i18n="navMaison">品牌故事</a>
+        <a href="#bespoke" data-i18n="navBespoke">訂製流程</a>
+        <a href="#collections" data-i18n="navCollections">臻藏系列</a>
+        <a href="#materials" data-i18n="navMaterials">寶石材質</a>
+        <a href="#appointment" class="nav-appointment" data-i18n="navAppointment">預約鑑賞</a>
       </div>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open Menu">☰</button>
+      <div class="nav-actions">
+        <div class="lang-switch">
+          <button class="lang-btn active" type="button" data-lang="zh-Hant">繁中</button>
+          <button class="lang-btn" type="button" data-lang="zh-Hans">简中</button>
+          <button class="lang-btn" type="button" data-lang="ja">日本語</button>
+          <button class="lang-btn" type="button" data-lang="ko">한국어</button>
+        </div>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open Menu">☰</button>
+      </div>
     </div>
   </nav>
 
   <div class="mobile-panel" id="mobilePanel">
-    <a href="#maison">Maison</a>
-    <a href="#bespoke">Bespoke</a>
-    <a href="#collections">Collections</a>
-    <a href="#materials">Materials</a>
-    <a href="#appointment">Appointment</a>
+    <a href="#maison" data-i18n="mobileMaison">品牌故事 Maison</a>
+    <a href="#bespoke" data-i18n="mobileBespoke">訂製流程 Bespoke</a>
+    <a href="#collections" data-i18n="mobileCollections">臻藏系列 Collections</a>
+    <a href="#materials" data-i18n="mobileMaterials">寶石材質 Materials</a>
+    <a href="#appointment" data-i18n="mobileAppointment">預約鑑賞 Appointment</a>
+
+    <div class="mobile-lang-switch">
+      <button class="lang-btn active" type="button" data-lang="zh-Hant">繁中</button>
+      <button class="lang-btn" type="button" data-lang="zh-Hans">简中</button>
+      <button class="lang-btn" type="button" data-lang="ja">日本語</button>
+      <button class="lang-btn" type="button" data-lang="ko">한국어</button>
+    </div>
   </div>
 
   <header class="hero" id="home">
@@ -875,18 +970,18 @@
         <div class="eyebrow">High Jewelry · Bespoke Atelier</div>
         <h1>
           Xiyue
-          <span>璽玥</span>
+          <span data-i18n="heroBrandZh">璽玥</span>
         </h1>
-        <p class="hero-copy">
-          璽玥珠寶訂製專注於天然寶石、翡翠與個人化珠寶設計，從選石、比例、工藝到完成交付，為每位藏家打造具有紀念意義與收藏價值的作品。
+        <p class="hero-copy" data-i18n="heroCopy">
+          璽玥珠寶訂製專注於天然寶石、翡翠、黃金飾品與個人化珠寶設計，從選石、材質、比例、工藝到完成交付，為每位藏家打造具有紀念意義與收藏價值的作品。
         </p>
         <div class="hero-actions">
-          <a href="#appointment" class="btn btn-primary">Private Appointment</a>
-          <a href="#collections" class="btn btn-quiet">Explore Collections</a>
+          <a href="#appointment" class="btn btn-primary" data-i18n="heroPrimary">預約私人鑑賞</a>
+          <a href="#collections" class="btn btn-quiet" data-i18n="heroSecondary">探索臻藏系列</a>
         </div>
       </div>
 
-      <div class="hero-visual"></div>
+      <div class="hero-visual" data-i18n-placeholder="placeholderHero" data-placeholder="主視覺圖片預留"></div>
     </div>
   </header>
 
@@ -895,28 +990,28 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-label">Maison Xiyue</div>
+            <div class="section-label" data-i18n="labelMaison">Maison Xiyue｜品牌故事</div>
             <h2 class="section-title">
-              A Quiet Form of Luxury
-              <span class="zh">關於璽玥</span>
+              <span data-i18n="maisonTitle">安靜而耐看的高級感</span>
+              <span class="en">A Quiet Form of Luxury</span>
             </h2>
           </div>
-          <p class="section-desc">
-            我們希望讓珠寶回到作品本身。少一些喧嘩，多一些細節，讓寶石、設計與佩戴者之間形成真正的連結。
+          <p class="section-desc" data-i18n="maisonDesc">
+            我們希望讓珠寶回到作品本身。少一些喧嘩，多一些細節，讓寶石、金工、設計與佩戴者之間形成真正的連結。
           </p>
         </div>
 
         <div class="maison-grid">
           <div class="maison-copy">
-            <p>
+            <p data-i18n="maisonP1">
               璽玥珠寶訂製以私人 Atelier 的方式服務每一位藏家，重視天然材質的質感、佩戴比例與作品背後的紀念意義。
             </p>
-            <p>
-              每一件作品皆從需求開始，經由寶石甄選、設計討論與工藝製作，讓珠寶不只是裝飾，而是能被長期珍藏的個人信物。
+            <p data-i18n="maisonP2">
+              每一件作品皆從需求開始，經由寶石甄選、黃金與貴金屬搭配、設計討論與工藝製作，讓珠寶不只是裝飾，而是能被長期珍藏的個人信物。
             </p>
           </div>
 
-          <div class="maison-card"></div>
+          <div class="maison-card" data-i18n-placeholder="placeholderAtelier" data-placeholder="工作室圖片預留"></div>
         </div>
       </div>
     </section>
@@ -925,42 +1020,42 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-label">Bespoke Journey</div>
+            <div class="section-label" data-i18n="labelBespoke">Bespoke Journey｜訂製流程</div>
             <h2 class="section-title">
-              Crafted for One
-              <span class="zh">私人訂製流程</span>
+              <span data-i18n="bespokeTitle">私人訂製流程</span>
+              <span class="en">Crafted for One</span>
             </h2>
           </div>
-          <p class="section-desc">
-            高端訂製的重點不只是完成一件珠寶，而是讓作品從一開始就符合佩戴者的氣質、場合與長期收藏需求。
+          <p class="section-desc" data-i18n="bespokeDesc">
+            高端訂製的重點不只是完成一件珠寶，而是讓作品從一開始就符合佩戴者的氣質、場合、預算與長期收藏需求。
           </p>
         </div>
 
         <div class="journey">
           <div class="journey-item">
             <div class="journey-num">01</div>
-            <h3>私人諮詢</h3>
-            <p>了解預算、用途、佩戴習慣與偏好的寶石風格。</p>
+            <h3 data-i18n="step1Title">私人諮詢</h3>
+            <p data-i18n="step1Desc">了解預算、用途、佩戴習慣與偏好的寶石或黃金飾品風格。</p>
           </div>
           <div class="journey-item">
             <div class="journey-num">02</div>
-            <h3>寶石甄選</h3>
-            <p>依需求挑選翡翠、彩色寶石或鑽石主石。</p>
+            <h3 data-i18n="step2Title">材質甄選</h3>
+            <p data-i18n="step2Desc">依需求挑選翡翠、彩色寶石、鑽石、黃金或 18K 金材質。</p>
           </div>
           <div class="journey-item">
             <div class="journey-num">03</div>
-            <h3>設計提案</h3>
-            <p>討論比例、線條、鑲嵌方式與整體佩戴效果。</p>
+            <h3 data-i18n="step3Title">設計提案</h3>
+            <p data-i18n="step3Desc">討論比例、線條、鑲嵌方式、金工細節與整體佩戴效果。</p>
           </div>
           <div class="journey-item">
             <div class="journey-num">04</div>
-            <h3>工藝製作</h3>
-            <p>由工藝端進行製作、鑲嵌、修飾與細節確認。</p>
+            <h3 data-i18n="step4Title">工藝製作</h3>
+            <p data-i18n="step4Desc">由工藝端進行製作、鑲嵌、修飾、拋光與細節確認。</p>
           </div>
           <div class="journey-item">
             <div class="journey-num">05</div>
-            <h3>完成交付</h3>
-            <p>確認成品細節，完成包裝與後續保養說明。</p>
+            <h3 data-i18n="step5Title">完成交付</h3>
+            <p data-i18n="step5Desc">確認成品細節，完成包裝、佩戴說明與後續保養建議。</p>
           </div>
         </div>
       </div>
@@ -970,45 +1065,55 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-label">Signature Collections</div>
+            <div class="section-label" data-i18n="labelCollections">Signature Collections｜臻藏系列</div>
             <h2 class="section-title">
-              The House Selection
-              <span class="zh">璽玥臻藏系列</span>
+              <span data-i18n="collectionsTitle">璽玥臻藏系列</span>
+              <span class="en">The House Selection</span>
             </h2>
           </div>
-          <p class="section-desc">
-            目前作品圖片先保留空位，後續可換成你的實際珠寶照片。這一區會作為品牌主力作品與訂製方向展示。
+          <p class="section-desc" data-i18n="collectionsDesc">
+            目前作品圖片先保留空位，後續可換成你的實際珠寶照片。此區作為品牌主力作品與訂製方向展示，包含翡翠、寶石、黃金飾品與婚嫁珠寶。
           </p>
         </div>
 
         <div class="collection-grid">
           <article class="collection-card">
-            <div class="collection-image"></div>
+            <div class="collection-image jade" data-i18n-placeholder="placeholderImage" data-placeholder="圖片預留"></div>
             <div class="collection-body">
               <span>Xiyue Jade</span>
-              <h3>翡翠臻藏</h3>
-              <p>以天然翡翠為核心，重視種水、色澤、比例與佩戴氣質。</p>
-              <a href="#appointment" class="link-line">Appointment</a>
+              <h3 data-i18n="jadeTitle">翡翠臻藏</h3>
+              <p data-i18n="jadeDesc">以天然翡翠為核心，重視種水、色澤、比例與佩戴氣質。</p>
+              <a href="#appointment" class="link-line" data-i18n="appointmentLink">預約鑑賞</a>
             </div>
           </article>
 
           <article class="collection-card">
-            <div class="collection-image"></div>
+            <div class="collection-image gem" data-i18n-placeholder="placeholderImage" data-placeholder="圖片預留"></div>
             <div class="collection-body">
               <span>Bespoke Gems</span>
-              <h3>寶石訂製</h3>
-              <p>依個人喜好選擇彩色寶石，打造專屬戒指、墜飾與套組。</p>
-              <a href="#appointment" class="link-line">Appointment</a>
+              <h3 data-i18n="gemTitle">寶石訂製</h3>
+              <p data-i18n="gemDesc">依個人喜好選擇彩色寶石與鑽石，打造專屬戒指、墜飾與套組。</p>
+              <a href="#appointment" class="link-line" data-i18n="appointmentLink">預約鑑賞</a>
             </div>
           </article>
 
           <article class="collection-card">
-            <div class="collection-image"></div>
+            <div class="collection-image gold" data-i18n-placeholder="placeholderImage" data-placeholder="圖片預留"></div>
+            <div class="collection-body">
+              <span>Gold Jewelry</span>
+              <h3 data-i18n="goldTitle">黃金飾品</h3>
+              <p data-i18n="goldDesc">提供黃金項鍊、手鍊、戒指、墜飾與紀念禮贈的訂製服務。</p>
+              <a href="#appointment" class="link-line" data-i18n="appointmentLink">預約鑑賞</a>
+            </div>
+          </article>
+
+          <article class="collection-card">
+            <div class="collection-image bridal" data-i18n-placeholder="placeholderImage" data-placeholder="圖片預留"></div>
             <div class="collection-body">
               <span>Bridal Jewelry</span>
-              <h3>婚嫁珠寶</h3>
-              <p>以紀念性與儀式感為設計核心，訂製婚嫁與重要場合珠寶。</p>
-              <a href="#appointment" class="link-line">Appointment</a>
+              <h3 data-i18n="bridalTitle">婚嫁珠寶</h3>
+              <p data-i18n="bridalDesc">以紀念性與儀式感為設計核心，訂製婚嫁與重要場合珠寶。</p>
+              <a href="#appointment" class="link-line" data-i18n="appointmentLink">預約鑑賞</a>
             </div>
           </article>
         </div>
@@ -1019,35 +1124,39 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-label">Materials</div>
+            <div class="section-label" data-i18n="labelMaterials">Materials｜寶石與材質</div>
             <h2 class="section-title">
-              Stones with Character
-              <span class="zh">寶石與材質</span>
+              <span data-i18n="materialsTitle">寶石、翡翠與黃金</span>
+              <span class="en">Stones with Character</span>
             </h2>
           </div>
-          <p class="section-desc">
-            珠寶的高級感，來自材質、比例與工藝之間的平衡。璽玥以天然寶石為起點，呈現每件作品的獨特性。
+          <p class="section-desc" data-i18n="materialsDesc">
+            珠寶的高級感，來自材質、比例與工藝之間的平衡。璽玥以天然寶石與貴金屬為起點，呈現每件作品的獨特性。
           </p>
         </div>
 
         <div class="materials-grid">
           <div class="material-feature">
             <h3>Jadeite</h3>
-            <p>翡翠的溫潤與內斂，是東方珠寶中最具情感與收藏底蘊的材質之一。</p>
+            <p data-i18n="jadeiteMaterial">翡翠的溫潤與內斂，是東方珠寶中最具情感與收藏底蘊的材質之一。</p>
           </div>
 
           <div class="material-list">
             <div class="material-card">
               <h3>Colored Gems</h3>
-              <p>彩色寶石能呈現更鮮明的個人性格，適合訂製日常佩戴與紀念作品。</p>
+              <p data-i18n="coloredGemsMaterial">彩色寶石能呈現更鮮明的個人性格，適合訂製日常佩戴與紀念作品。</p>
             </div>
             <div class="material-card">
               <h3>Diamonds</h3>
-              <p>鑽石與金屬線條能讓作品更俐落，適合婚嫁、紀念日與高級套組設計。</p>
+              <p data-i18n="diamondsMaterial">鑽石與金屬線條能讓作品更俐落，適合婚嫁、紀念日與高級套組設計。</p>
+            </div>
+            <div class="material-card">
+              <h3>Gold Jewelry</h3>
+              <p data-i18n="goldMaterial">黃金飾品兼具佩戴、贈禮與收藏意義，可依場合與預算訂製專屬款式。</p>
             </div>
             <div class="material-card">
               <h3>18K Gold</h3>
-              <p>以穩定且細緻的金屬結構，承托寶石比例與整體佩戴質感。</p>
+              <p data-i18n="gold18Material">以穩定且細緻的貴金屬結構，承托寶石比例與整體佩戴質感。</p>
             </div>
           </div>
         </div>
@@ -1058,37 +1167,37 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-label">Atelier Standards</div>
+            <div class="section-label" data-i18n="labelStandards">Atelier Standards｜工藝標準</div>
             <h2 class="section-title">
-              Details Matter
-              <span class="zh">工藝與細節</span>
+              <span data-i18n="standardsTitle">細節，決定作品質感</span>
+              <span class="en">Details Matter</span>
             </h2>
           </div>
-          <p class="section-desc">
-            真正耐看的珠寶，不是靠複雜堆疊，而是每個細節都恰到好處。
+          <p class="section-desc" data-i18n="standardsDesc">
+            真正耐看的珠寶，不是靠複雜堆疊，而是寶石比例、金工線條、佩戴舒適度與完成度都恰到好處。
           </p>
         </div>
 
         <div class="standards-grid">
           <div class="standard-card">
             <span>01</span>
-            <h3>寶石比例</h3>
-            <p>根據主石大小、形狀與光感，規劃適合的作品比例。</p>
+            <h3 data-i18n="standard1Title">寶石比例</h3>
+            <p data-i18n="standard1Desc">根據主石大小、形狀與光感，規劃適合的作品比例。</p>
           </div>
           <div class="standard-card">
             <span>02</span>
-            <h3>佩戴舒適</h3>
-            <p>考量日常佩戴角度、重量與肌膚貼合度。</p>
+            <h3 data-i18n="standard2Title">佩戴舒適</h3>
+            <p data-i18n="standard2Desc">考量日常佩戴角度、重量與肌膚貼合度。</p>
           </div>
           <div class="standard-card">
             <span>03</span>
-            <h3>工藝完成度</h3>
-            <p>重視鑲嵌、拋光、收邊與整體細節質感。</p>
+            <h3 data-i18n="standard3Title">金工細節</h3>
+            <p data-i18n="standard3Desc">重視鑲嵌、拋光、收邊、金飾線條與整體細節質感。</p>
           </div>
           <div class="standard-card">
             <span>04</span>
-            <h3>收藏延續</h3>
-            <p>讓作品不只適合當下，也能長期保存與傳承。</p>
+            <h3 data-i18n="standard4Title">收藏延續</h3>
+            <p data-i18n="standard4Desc">讓作品不只適合當下，也能長期保存、佩戴與傳承。</p>
           </div>
         </div>
       </div>
@@ -1097,29 +1206,29 @@
     <section class="appointment" id="appointment">
       <div class="container appointment-box">
         <div>
-          <div class="section-label">Private Appointment</div>
+          <div class="section-label" data-i18n="labelAppointment">Private Appointment｜預約鑑賞</div>
           <h2>
-            Bespoke Consultation
-            <span>預約私人鑑賞</span>
+            <span data-i18n="appointmentTitle">預約私人鑑賞</span>
+            <span>Bespoke Consultation</span>
           </h2>
-          <p>
-            如需了解作品、訂製流程或預約鑑賞，可透過指定聯絡方式與璽玥顧問聯繫。此區目前先保留空白，後續可放入正式 Line、Email 或預約表單。
+          <p data-i18n="appointmentDesc">
+            如需了解翡翠、寶石、黃金飾品、婚嫁珠寶或訂製流程，可透過指定聯絡方式與璽玥顧問聯繫。此區目前先保留空白，後續可放入正式 Line、Email 或預約表單。
           </p>
-          <a href="#" class="btn btn-primary">Contact Reserved</a>
+          <a href="#" class="btn btn-primary" data-i18n="appointmentBtn">聯繫璽玥顧問</a>
         </div>
 
         <div class="contact-panel">
           <div class="contact-row">
             <small>Line</small>
-            <div>尚未設定</div>
+            <div data-i18n="lineUnset">尚未設定</div>
           </div>
           <div class="contact-row">
             <small>Email</small>
-            <div>尚未設定</div>
+            <div data-i18n="emailUnset">尚未設定</div>
           </div>
           <div class="contact-row">
             <small>Service</small>
-            <div>私人訂製｜寶石甄選｜珠寶鑑賞｜作品諮詢</div>
+            <div data-i18n="serviceText">翡翠珠寶｜寶石訂製｜黃金飾品｜婚嫁珠寶｜私人鑑賞</div>
           </div>
         </div>
       </div>
@@ -1134,6 +1243,360 @@
   </footer>
 
   <script>
+    const translations = {
+      "zh-Hant": {
+        title: "璽玥珠寶訂製｜Xiyue Jewelry Atelier",
+        description: "璽玥珠寶訂製 Xiyue Jewelry Atelier，專注天然寶石、翡翠、黃金飾品與高端珠寶私人訂製。",
+
+        navMaison: "品牌故事",
+        navBespoke: "訂製流程",
+        navCollections: "臻藏系列",
+        navMaterials: "寶石材質",
+        navAppointment: "預約鑑賞",
+
+        mobileMaison: "品牌故事 Maison",
+        mobileBespoke: "訂製流程 Bespoke",
+        mobileCollections: "臻藏系列 Collections",
+        mobileMaterials: "寶石材質 Materials",
+        mobileAppointment: "預約鑑賞 Appointment",
+
+        heroBrandZh: "璽玥",
+        heroCopy: "璽玥珠寶訂製專注於天然寶石、翡翠、黃金飾品與個人化珠寶設計，從選石、材質、比例、工藝到完成交付，為每位藏家打造具有紀念意義與收藏價值的作品。",
+        heroPrimary: "預約私人鑑賞",
+        heroSecondary: "探索臻藏系列",
+        placeholderHero: "主視覺圖片預留",
+        placeholderAtelier: "工作室圖片預留",
+        placeholderImage: "圖片預留",
+
+        labelMaison: "Maison Xiyue｜品牌故事",
+        maisonTitle: "安靜而耐看的高級感",
+        maisonDesc: "我們希望讓珠寶回到作品本身。少一些喧嘩，多一些細節，讓寶石、金工、設計與佩戴者之間形成真正的連結。",
+        maisonP1: "璽玥珠寶訂製以私人 Atelier 的方式服務每一位藏家，重視天然材質的質感、佩戴比例與作品背後的紀念意義。",
+        maisonP2: "每一件作品皆從需求開始，經由寶石甄選、黃金與貴金屬搭配、設計討論與工藝製作，讓珠寶不只是裝飾，而是能被長期珍藏的個人信物。",
+
+        labelBespoke: "Bespoke Journey｜訂製流程",
+        bespokeTitle: "私人訂製流程",
+        bespokeDesc: "高端訂製的重點不只是完成一件珠寶，而是讓作品從一開始就符合佩戴者的氣質、場合、預算與長期收藏需求。",
+
+        step1Title: "私人諮詢",
+        step1Desc: "了解預算、用途、佩戴習慣與偏好的寶石或黃金飾品風格。",
+        step2Title: "材質甄選",
+        step2Desc: "依需求挑選翡翠、彩色寶石、鑽石、黃金或 18K 金材質。",
+        step3Title: "設計提案",
+        step3Desc: "討論比例、線條、鑲嵌方式、金工細節與整體佩戴效果。",
+        step4Title: "工藝製作",
+        step4Desc: "由工藝端進行製作、鑲嵌、修飾、拋光與細節確認。",
+        step5Title: "完成交付",
+        step5Desc: "確認成品細節，完成包裝、佩戴說明與後續保養建議。",
+
+        labelCollections: "Signature Collections｜臻藏系列",
+        collectionsTitle: "璽玥臻藏系列",
+        collectionsDesc: "目前作品圖片先保留空位，後續可換成你的實際珠寶照片。此區作為品牌主力作品與訂製方向展示，包含翡翠、寶石、黃金飾品與婚嫁珠寶。",
+        jadeTitle: "翡翠臻藏",
+        jadeDesc: "以天然翡翠為核心，重視種水、色澤、比例與佩戴氣質。",
+        gemTitle: "寶石訂製",
+        gemDesc: "依個人喜好選擇彩色寶石與鑽石，打造專屬戒指、墜飾與套組。",
+        goldTitle: "黃金飾品",
+        goldDesc: "提供黃金項鍊、手鍊、戒指、墜飾與紀念禮贈的訂製服務。",
+        bridalTitle: "婚嫁珠寶",
+        bridalDesc: "以紀念性與儀式感為設計核心，訂製婚嫁與重要場合珠寶。",
+        appointmentLink: "預約鑑賞",
+
+        labelMaterials: "Materials｜寶石與材質",
+        materialsTitle: "寶石、翡翠與黃金",
+        materialsDesc: "珠寶的高級感，來自材質、比例與工藝之間的平衡。璽玥以天然寶石與貴金屬為起點，呈現每件作品的獨特性。",
+        jadeiteMaterial: "翡翠的溫潤與內斂，是東方珠寶中最具情感與收藏底蘊的材質之一。",
+        coloredGemsMaterial: "彩色寶石能呈現更鮮明的個人性格，適合訂製日常佩戴與紀念作品。",
+        diamondsMaterial: "鑽石與金屬線條能讓作品更俐落，適合婚嫁、紀念日與高級套組設計。",
+        goldMaterial: "黃金飾品兼具佩戴、贈禮與收藏意義，可依場合與預算訂製專屬款式。",
+        gold18Material: "以穩定且細緻的貴金屬結構，承托寶石比例與整體佩戴質感。",
+
+        labelStandards: "Atelier Standards｜工藝標準",
+        standardsTitle: "細節，決定作品質感",
+        standardsDesc: "真正耐看的珠寶，不是靠複雜堆疊，而是寶石比例、金工線條、佩戴舒適度與完成度都恰到好處。",
+        standard1Title: "寶石比例",
+        standard1Desc: "根據主石大小、形狀與光感，規劃適合的作品比例。",
+        standard2Title: "佩戴舒適",
+        standard2Desc: "考量日常佩戴角度、重量與肌膚貼合度。",
+        standard3Title: "金工細節",
+        standard3Desc: "重視鑲嵌、拋光、收邊、金飾線條與整體細節質感。",
+        standard4Title: "收藏延續",
+        standard4Desc: "讓作品不只適合當下，也能長期保存、佩戴與傳承。",
+
+        labelAppointment: "Private Appointment｜預約鑑賞",
+        appointmentTitle: "預約私人鑑賞",
+        appointmentDesc: "如需了解翡翠、寶石、黃金飾品、婚嫁珠寶或訂製流程，可透過指定聯絡方式與璽玥顧問聯繫。此區目前先保留空白，後續可放入正式 Line、Email 或預約表單。",
+        appointmentBtn: "聯繫璽玥顧問",
+        lineUnset: "尚未設定",
+        emailUnset: "尚未設定",
+        serviceText: "翡翠珠寶｜寶石訂製｜黃金飾品｜婚嫁珠寶｜私人鑑賞"
+      },
+
+      "zh-Hans": {
+        title: "玺玥珠宝订制｜Xiyue Jewelry Atelier",
+        description: "玺玥珠宝订制 Xiyue Jewelry Atelier，专注天然宝石、翡翠、黄金饰品与高端珠宝私人订制。",
+
+        navMaison: "品牌故事",
+        navBespoke: "订制流程",
+        navCollections: "臻藏系列",
+        navMaterials: "宝石材质",
+        navAppointment: "预约鉴赏",
+
+        mobileMaison: "品牌故事 Maison",
+        mobileBespoke: "订制流程 Bespoke",
+        mobileCollections: "臻藏系列 Collections",
+        mobileMaterials: "宝石材质 Materials",
+        mobileAppointment: "预约鉴赏 Appointment",
+
+        heroBrandZh: "玺玥",
+        heroCopy: "玺玥珠宝订制专注于天然宝石、翡翠、黄金饰品与个性化珠宝设计，从选石、材质、比例、工艺到完成交付，为每位藏家打造具有纪念意义与收藏价值的作品。",
+        heroPrimary: "预约私人鉴赏",
+        heroSecondary: "探索臻藏系列",
+        placeholderHero: "主视觉图片预留",
+        placeholderAtelier: "工作室图片预留",
+        placeholderImage: "图片预留",
+
+        labelMaison: "Maison Xiyue｜品牌故事",
+        maisonTitle: "安静而耐看的高级感",
+        maisonDesc: "我们希望让珠宝回到作品本身。少一些喧哗，多一些细节，让宝石、金工、设计与佩戴者之间形成真正的连接。",
+        maisonP1: "玺玥珠宝订制以私人 Atelier 的方式服务每一位藏家，重视天然材质的质感、佩戴比例与作品背后的纪念意义。",
+        maisonP2: "每一件作品皆从需求开始，经由宝石甄选、黄金与贵金属搭配、设计讨论与工艺制作，让珠宝不只是装饰，而是能被长期珍藏的个人信物。",
+
+        labelBespoke: "Bespoke Journey｜订制流程",
+        bespokeTitle: "私人订制流程",
+        bespokeDesc: "高端订制的重点不只是完成一件珠宝，而是让作品从一开始就符合佩戴者的气质、场合、预算与长期收藏需求。",
+
+        step1Title: "私人咨询",
+        step1Desc: "了解预算、用途、佩戴习惯与偏好的宝石或黄金饰品风格。",
+        step2Title: "材质甄选",
+        step2Desc: "依需求挑选翡翠、彩色宝石、钻石、黄金或 18K 金材质。",
+        step3Title: "设计提案",
+        step3Desc: "讨论比例、线条、镶嵌方式、金工细节与整体佩戴效果。",
+        step4Title: "工艺制作",
+        step4Desc: "由工艺端进行制作、镶嵌、修饰、抛光与细节确认。",
+        step5Title: "完成交付",
+        step5Desc: "确认成品细节，完成包装、佩戴说明与后续保养建议。",
+
+        labelCollections: "Signature Collections｜臻藏系列",
+        collectionsTitle: "玺玥臻藏系列",
+        collectionsDesc: "目前作品图片先保留空位，后续可换成你的实际珠宝照片。此区作为品牌主力作品与订制方向展示，包含翡翠、宝石、黄金饰品与婚嫁珠宝。",
+        jadeTitle: "翡翠臻藏",
+        jadeDesc: "以天然翡翠为核心，重视种水、色泽、比例与佩戴气质。",
+        gemTitle: "宝石订制",
+        gemDesc: "依个人喜好选择彩色宝石与钻石，打造专属戒指、坠饰与套组。",
+        goldTitle: "黄金饰品",
+        goldDesc: "提供黄金项链、手链、戒指、坠饰与纪念礼赠的订制服务。",
+        bridalTitle: "婚嫁珠宝",
+        bridalDesc: "以纪念性与仪式感为设计核心，订制婚嫁与重要场合珠宝。",
+        appointmentLink: "预约鉴赏",
+
+        labelMaterials: "Materials｜宝石与材质",
+        materialsTitle: "宝石、翡翠与黄金",
+        materialsDesc: "珠宝的高级感，来自材质、比例与工艺之间的平衡。玺玥以天然宝石与贵金属为起点，呈现每件作品的独特性。",
+        jadeiteMaterial: "翡翠的温润与内敛，是东方珠宝中最具情感与收藏底蕴的材质之一。",
+        coloredGemsMaterial: "彩色宝石能呈现更鲜明的个人性格，适合订制日常佩戴与纪念作品。",
+        diamondsMaterial: "钻石与金属线条能让作品更利落，适合婚嫁、纪念日与高级套组设计。",
+        goldMaterial: "黄金饰品兼具佩戴、赠礼与收藏意义，可依场合与预算订制专属款式。",
+        gold18Material: "以稳定且细致的贵金属结构，承托宝石比例与整体佩戴质感。",
+
+        labelStandards: "Atelier Standards｜工艺标准",
+        standardsTitle: "细节，决定作品质感",
+        standardsDesc: "真正耐看的珠宝，不是靠复杂堆叠，而是宝石比例、金工线条、佩戴舒适度与完成度都恰到好处。",
+        standard1Title: "宝石比例",
+        standard1Desc: "根据主石大小、形状与光感，规划适合的作品比例。",
+        standard2Title: "佩戴舒适",
+        standard2Desc: "考量日常佩戴角度、重量与肌肤贴合度。",
+        standard3Title: "金工细节",
+        standard3Desc: "重视镶嵌、抛光、收边、金饰线条与整体细节质感。",
+        standard4Title: "收藏延续",
+        standard4Desc: "让作品不只适合当下，也能长期保存、佩戴与传承。",
+
+        labelAppointment: "Private Appointment｜预约鉴赏",
+        appointmentTitle: "预约私人鉴赏",
+        appointmentDesc: "如需了解翡翠、宝石、黄金饰品、婚嫁珠宝或订制流程，可通过指定联系方式与玺玥顾问联系。此区目前先保留空白，后续可放入正式 Line、Email 或预约表单。",
+        appointmentBtn: "联系玺玥顾问",
+        lineUnset: "尚未设置",
+        emailUnset: "尚未设置",
+        serviceText: "翡翠珠宝｜宝石订制｜黄金饰品｜婚嫁珠宝｜私人鉴赏"
+      },
+
+      ja: {
+        title: "璽玥ジュエリーオーダーメイド｜Xiyue Jewelry Atelier",
+        description: "璽玥ジュエリーオーダーメイド Xiyue Jewelry Atelier は、天然宝石、翡翠、ゴールドジュエリー、高級ジュエリーのプライベートオーダーに特化しています。",
+
+        navMaison: "ブランドストーリー",
+        navBespoke: "オーダーの流れ",
+        navCollections: "コレクション",
+        navMaterials: "宝石と素材",
+        navAppointment: "予約鑑賞",
+
+        mobileMaison: "ブランドストーリー Maison",
+        mobileBespoke: "オーダーの流れ Bespoke",
+        mobileCollections: "コレクション Collections",
+        mobileMaterials: "宝石と素材 Materials",
+        mobileAppointment: "予約鑑賞 Appointment",
+
+        heroBrandZh: "璽玥",
+        heroCopy: "璽玥ジュエリーオーダーメイドは、天然宝石、翡翠、ゴールドジュエリー、パーソナルなジュエリーデザインを専門としています。石選び、素材、バランス、工芸からお渡しまで、一人ひとりのために記念性とコレクション価値を備えた作品を仕立てます。",
+        heroPrimary: "プライベート鑑賞を予約",
+        heroSecondary: "コレクションを見る",
+        placeholderHero: "メインビジュアル画像 予約枠",
+        placeholderAtelier: "アトリエ画像 予約枠",
+        placeholderImage: "画像予約枠",
+
+        labelMaison: "Maison Xiyue｜ブランドストーリー",
+        maisonTitle: "静かに美しさが続く上質感",
+        maisonDesc: "私たちは、ジュエリーを作品そのものへと戻したいと考えています。過度な装飾よりも、宝石、金工、デザイン、そして身につける方とのつながりを大切にします。",
+        maisonP1: "璽玥ジュエリーオーダーメイドは、プライベート Atelier として一人ひとりのお客様に向き合い、天然素材の質感、装着時のバランス、作品に込められた意味を重視しています。",
+        maisonP2: "すべての作品はご要望から始まり、宝石の選定、ゴールドや貴金属との組み合わせ、デザイン相談、工芸制作を経て、長く大切にできる個人のシンボルへと仕上げられます。",
+
+        labelBespoke: "Bespoke Journey｜オーダーの流れ",
+        bespokeTitle: "プライベートオーダーの流れ",
+        bespokeDesc: "高級オーダーメイドで大切なのは、作品を完成させることだけではありません。最初の段階から、身につける方の雰囲気、場面、ご予算、長期的なコレクション性に合わせて整えることです。",
+
+        step1Title: "プライベート相談",
+        step1Desc: "ご予算、用途、着用習慣、好みの宝石やゴールドジュエリーのスタイルを伺います。",
+        step2Title: "素材の選定",
+        step2Desc: "翡翠、カラーストーン、ダイヤモンド、ゴールド、18K ゴールドなどからご要望に合わせて選定します。",
+        step3Title: "デザイン提案",
+        step3Desc: "比率、ライン、セッティング、金工の細部、全体の着用感を確認します。",
+        step4Title: "工芸制作",
+        step4Desc: "制作、石留め、仕上げ、研磨、細部の確認を行います。",
+        step5Title: "完成とお渡し",
+        step5Desc: "完成品の細部を確認し、包装、着用方法、今後のお手入れについてご案内します。",
+
+        labelCollections: "Signature Collections｜コレクション",
+        collectionsTitle: "璽玥シグネチャーコレクション",
+        collectionsDesc: "現在、作品画像は予約枠として残しています。後ほど実際のジュエリー写真に差し替えられます。このエリアでは、翡翠、宝石、ゴールドジュエリー、ブライダルジュエリーを中心に、ブランドの主な制作方向を紹介します。",
+        jadeTitle: "翡翠コレクション",
+        jadeDesc: "天然翡翠を中心に、透明感、色合い、比率、着用時の雰囲気を大切にします。",
+        gemTitle: "宝石オーダー",
+        gemDesc: "カラーストーンやダイヤモンドを選び、リング、ペンダント、セットジュエリーを制作します。",
+        goldTitle: "ゴールドジュエリー",
+        goldDesc: "ゴールドネックレス、ブレスレット、リング、ペンダント、記念ギフトのオーダーに対応します。",
+        bridalTitle: "ブライダルジュエリー",
+        bridalDesc: "記念性と儀式感を大切に、結婚や特別な場面のためのジュエリーを制作します。",
+        appointmentLink: "予約鑑賞",
+
+        labelMaterials: "Materials｜宝石と素材",
+        materialsTitle: "宝石、翡翠、ゴールド",
+        materialsDesc: "ジュエリーの上質感は、素材、比率、工芸のバランスから生まれます。璽玥は天然宝石と貴金属を起点に、一点ごとの個性を表現します。",
+        jadeiteMaterial: "翡翠の温かみと奥ゆかしさは、東洋ジュエリーの中でも感情とコレクション性を備えた素材の一つです。",
+        coloredGemsMaterial: "カラーストーンは個性をより鮮やかに表現し、日常使いや記念の作品に適しています。",
+        diamondsMaterial: "ダイヤモンドと金属のラインは作品をより洗練させ、ブライダルや記念日、高級セットジュエリーに適しています。",
+        goldMaterial: "ゴールドジュエリーは着用、贈り物、コレクションの意味を兼ね備え、場面やご予算に合わせて制作できます。",
+        gold18Material: "安定した繊細な貴金属構造により、宝石の比率と全体の着用感を支えます。",
+
+        labelStandards: "Atelier Standards｜工芸基準",
+        standardsTitle: "細部が作品の質を決める",
+        standardsDesc: "本当に長く愛されるジュエリーは、複雑さではなく、宝石の比率、金工のライン、着け心地、完成度の調和によって生まれます。",
+        standard1Title: "宝石の比率",
+        standard1Desc: "主石の大きさ、形、光の印象に合わせて適切な比率を設計します。",
+        standard2Title: "着け心地",
+        standard2Desc: "日常の着用角度、重さ、肌へのなじみを考慮します。",
+        standard3Title: "金工の細部",
+        standard3Desc: "石留め、研磨、縁の処理、ゴールドのライン、全体の細部の質感を重視します。",
+        standard4Title: "受け継がれる価値",
+        standard4Desc: "今だけでなく、長く保存し、身につけ、受け継げる作品を目指します。",
+
+        labelAppointment: "Private Appointment｜予約鑑賞",
+        appointmentTitle: "プライベート鑑賞のご予約",
+        appointmentDesc: "翡翠、宝石、ゴールドジュエリー、ブライダルジュエリー、またはオーダーの流れについてご相談の場合は、指定の連絡方法より璽玥の担当者へお問い合わせください。このエリアには後ほど正式な Line、Email、予約フォームを設定できます。",
+        appointmentBtn: "璽玥アドバイザーへ連絡",
+        lineUnset: "未設定",
+        emailUnset: "未設定",
+        serviceText: "翡翠ジュエリー｜宝石オーダー｜ゴールドジュエリー｜ブライダルジュエリー｜プライベート鑑賞"
+      },
+
+      ko: {
+        title: "시위에 주얼리 맞춤 제작｜Xiyue Jewelry Atelier",
+        description: "시위에 주얼리 맞춤 제작 Xiyue Jewelry Atelier는 천연 보석, 비취, 골드 주얼리와 하이엔드 주얼리 맞춤 제작을 전문으로 합니다.",
+
+        navMaison: "브랜드 스토리",
+        navBespoke: "맞춤 제작 과정",
+        navCollections: "컬렉션",
+        navMaterials: "보석과 소재",
+        navAppointment: "감상 예약",
+
+        mobileMaison: "브랜드 스토리 Maison",
+        mobileBespoke: "맞춤 제작 과정 Bespoke",
+        mobileCollections: "컬렉션 Collections",
+        mobileMaterials: "보석과 소재 Materials",
+        mobileAppointment: "감상 예약 Appointment",
+
+        heroBrandZh: "璽玥",
+        heroCopy: "시위에 주얼리 맞춤 제작은 천연 보석, 비취, 골드 주얼리와 개인 맞춤 주얼리 디자인을 전문으로 합니다. 원석 선택, 소재, 비율, 공예부터 완성 및 전달까지, 각 고객에게 기념성과 소장 가치를 지닌 작품을 제작합니다.",
+        heroPrimary: "프라이빗 감상 예약",
+        heroSecondary: "컬렉션 보기",
+        placeholderHero: "메인 비주얼 이미지 예약 공간",
+        placeholderAtelier: "아틀리에 이미지 예약 공간",
+        placeholderImage: "이미지 예약 공간",
+
+        labelMaison: "Maison Xiyue｜브랜드 스토리",
+        maisonTitle: "조용하지만 오래 남는 고급스러움",
+        maisonDesc: "우리는 주얼리가 작품 그 자체로 돌아가길 바랍니다. 과한 표현보다 보석, 금속 공예, 디자인, 그리고 착용자 사이의 진정한 연결을 중요하게 생각합니다.",
+        maisonP1: "시위에 주얼리 맞춤 제작은 프라이빗 Atelier 방식으로 각 고객을 응대하며, 천연 소재의 질감, 착용 비율, 작품에 담긴 의미를 중요하게 생각합니다.",
+        maisonP2: "모든 작품은 고객의 니즈에서 시작됩니다. 보석 선별, 골드와 귀금속의 조합, 디자인 상담, 공예 제작 과정을 거쳐 오랫동안 간직할 수 있는 개인적인 상징으로 완성됩니다.",
+
+        labelBespoke: "Bespoke Journey｜맞춤 제작 과정",
+        bespokeTitle: "프라이빗 맞춤 제작 과정",
+        bespokeDesc: "하이엔드 맞춤 제작의 핵심은 단순히 하나의 주얼리를 완성하는 것이 아니라, 처음부터 착용자의 분위기, 사용 장면, 예산, 장기적인 소장 가치를 함께 고려하는 것입니다.",
+
+        step1Title: "프라이빗 상담",
+        step1Desc: "예산, 용도, 착용 습관, 선호하는 보석 또는 골드 주얼리 스타일을 확인합니다.",
+        step2Title: "소재 선별",
+        step2Desc: "비취, 컬러 스톤, 다이아몬드, 골드 또는 18K 골드 소재를 니즈에 맞게 선택합니다.",
+        step3Title: "디자인 제안",
+        step3Desc: "비율, 라인, 세팅 방식, 금속 공예 디테일과 전체 착용감을 논의합니다.",
+        step4Title: "공예 제작",
+        step4Desc: "제작, 세팅, 마감, 폴리싱 및 세부 확인 과정을 진행합니다.",
+        step5Title: "완성 및 전달",
+        step5Desc: "완성품의 디테일을 확인하고 포장, 착용 안내, 사후 관리 내용을 안내합니다.",
+
+        labelCollections: "Signature Collections｜컬렉션",
+        collectionsTitle: "시위에 시그니처 컬렉션",
+        collectionsDesc: "현재 작품 이미지는 예약 공간으로 남겨두었습니다. 이후 실제 주얼리 사진으로 교체할 수 있습니다. 이 영역은 비취, 보석, 골드 주얼리, 브라이덜 주얼리를 포함한 브랜드의 주요 작품 방향을 보여줍니다.",
+        jadeTitle: "비취 컬렉션",
+        jadeDesc: "천연 비취를 중심으로 투명도, 색감, 비율과 착용자의 분위기를 중요하게 봅니다.",
+        gemTitle: "보석 맞춤 제작",
+        gemDesc: "개인의 취향에 맞춰 컬러 스톤과 다이아몬드를 선택하고, 반지, 펜던트, 세트 주얼리를 제작합니다.",
+        goldTitle: "골드 주얼리",
+        goldDesc: "골드 목걸이, 팔찌, 반지, 펜던트와 기념 선물용 주얼리 맞춤 제작을 제공합니다.",
+        bridalTitle: "브라이덜 주얼리",
+        bridalDesc: "기념성과 의식감을 중심으로 결혼 및 중요한 순간을 위한 주얼리를 제작합니다.",
+        appointmentLink: "감상 예약",
+
+        labelMaterials: "Materials｜보석과 소재",
+        materialsTitle: "보석, 비취, 골드",
+        materialsDesc: "주얼리의 고급스러움은 소재, 비율, 공예 사이의 균형에서 나옵니다. 시위에는 천연 보석과 귀금속을 바탕으로 각 작품의 개성을 표현합니다.",
+        jadeiteMaterial: "비취의 온화함과 절제된 아름다움은 동양 주얼리에서 감정과 소장 가치를 모두 지닌 소재 중 하나입니다.",
+        coloredGemsMaterial: "컬러 스톤은 개인의 개성을 더 선명하게 표현하며, 일상 착용과 기념 작품에 적합합니다.",
+        diamondsMaterial: "다이아몬드와 금속 라인은 작품을 더욱 정제된 느낌으로 만들어 브라이덜, 기념일, 하이엔드 세트 디자인에 적합합니다.",
+        goldMaterial: "골드 주얼리는 착용, 선물, 소장의 의미를 함께 지니며, 상황과 예산에 맞춰 맞춤 제작할 수 있습니다.",
+        gold18Material: "안정적이고 섬세한 귀금속 구조로 보석의 비율과 전체 착용감을 받쳐줍니다.",
+
+        labelStandards: "Atelier Standards｜공예 기준",
+        standardsTitle: "디테일이 작품의 품격을 결정합니다",
+        standardsDesc: "오래 보아도 아름다운 주얼리는 복잡한 장식이 아니라 보석의 비율, 금속 공예 라인, 착용감, 완성도의 조화에서 나옵니다.",
+        standard1Title: "보석 비율",
+        standard1Desc: "메인 스톤의 크기, 형태, 빛의 느낌에 맞춰 적절한 작품 비율을 설계합니다.",
+        standard2Title: "착용감",
+        standard2Desc: "일상 착용 각도, 무게, 피부에 닿는 느낌을 고려합니다.",
+        standard3Title: "금속 공예 디테일",
+        standard3Desc: "세팅, 폴리싱, 마감, 골드 라인과 전체적인 디테일의 질감을 중요하게 봅니다.",
+        standard4Title: "소장과 계승",
+        standard4Desc: "현재뿐 아니라 오래 보관하고 착용하며 이어갈 수 있는 작품을 지향합니다.",
+
+        labelAppointment: "Private Appointment｜감상 예약",
+        appointmentTitle: "프라이빗 감상 예약",
+        appointmentDesc: "비취, 보석, 골드 주얼리, 브라이덜 주얼리 또는 맞춤 제작 과정에 대해 알고 싶다면 지정된 연락 방식으로 시위에 상담 담당자에게 문의하실 수 있습니다. 이 영역은 현재 비워두었으며, 이후 공식 Line, Email 또는 예약 양식을 넣을 수 있습니다.",
+        appointmentBtn: "시위에 상담 담당자 문의",
+        lineUnset: "미설정",
+        emailUnset: "미설정",
+        serviceText: "비취 주얼리｜보석 맞춤 제작｜골드 주얼리｜브라이덜 주얼리｜프라이빗 감상"
+      }
+    };
+
     const menuBtn = document.getElementById("menuBtn");
     const mobilePanel = document.getElementById("mobilePanel");
 
@@ -1146,6 +1609,42 @@
         mobilePanel.classList.remove("open");
       });
     });
+
+    function applyLanguage(lang) {
+      const pack = translations[lang] || translations["zh-Hant"];
+
+      document.documentElement.lang = lang;
+      document.title = pack.title;
+
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) metaDescription.setAttribute("content", pack.description);
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (pack[key]) el.textContent = pack[key];
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+        const key = el.getAttribute("data-i18n-placeholder");
+        if (pack[key]) el.setAttribute("data-placeholder", pack[key]);
+      });
+
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+      });
+
+      localStorage.setItem("xiyue-lang", lang);
+    }
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+        applyLanguage(lang);
+      });
+    });
+
+    const savedLang = localStorage.getItem("xiyue-lang") || "zh-Hant";
+    applyLanguage(savedLang);
   </script>
 </body>
 </html>
