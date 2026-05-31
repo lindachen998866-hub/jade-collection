@@ -916,6 +916,37 @@
       .footer-inner div + div {
         margin-top: 10px;
       }
+    }    .has-sanity-image {
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+    }
+
+    .hero-visual.has-sanity-image::before,
+    .hero-visual.has-sanity-image::after,
+    .maison-card.has-sanity-image::after,
+    .collection-image.has-sanity-image::before,
+    .collection-image.has-sanity-image::after {
+      display: none !important;
+    }
+
+    .material-feature.has-sanity-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .material-feature.has-sanity-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.68));
+      z-index: 0;
+    }
+
+    .material-feature.has-sanity-image h3,
+    .material-feature.has-sanity-image p {
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
@@ -1646,5 +1677,98 @@
     const savedLang = localStorage.getItem("xiyue-lang") || "zh-Hant";
     applyLanguage(savedLang);
   </script>
+  <script type="module">
+  const SANITY_PROJECT_ID = "qqik0k4r";
+  const SANITY_DATASET = "production";
+  const SANITY_API_VERSION = "2026-05-31";
+
+  const query = `*[_type == "siteSettings"][0]{
+    title,
+    lineId,
+    lineUrl,
+    email,
+    "heroImageUrl": heroImage.asset->url,
+    "atelierImageUrl": atelierImage.asset->url,
+    "jadeCollectionImageUrl": jadeCollectionImage.asset->url,
+    "gemCollectionImageUrl": gemCollectionImage.asset->url,
+    "goldCollectionImageUrl": goldCollectionImage.asset->url,
+    "bridalCollectionImageUrl": bridalCollectionImage.asset->url,
+    "materialsImageUrl": materialsImage.asset->url
+  }`;
+
+  const url = `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}?query=${encodeURIComponent(query)}`;
+
+  function setBackground(selector, imageUrl, overlay = false) {
+    if (!imageUrl) return;
+
+    const el = document.querySelector(selector);
+    if (!el) return;
+
+    el.classList.add("has-sanity-image");
+
+    if (overlay) {
+      el.style.backgroundImage = `linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.58)), url("${imageUrl}")`;
+    } else {
+      el.style.backgroundImage = `url("${imageUrl}")`;
+    }
+  }
+
+  function updateContact(settings) {
+    if (!settings) return;
+
+    const lineText = settings.lineId || "尚未設定";
+    const emailText = settings.email || "尚未設定";
+
+    const lineEl = document.querySelector('[data-i18n="lineUnset"]');
+    const emailEl = document.querySelector('[data-i18n="emailUnset"]');
+    const contactBtn = document.querySelector('[data-i18n="appointmentBtn"]');
+
+    if (lineEl) lineEl.textContent = lineText;
+    if (emailEl) emailEl.textContent = emailText;
+
+    if (contactBtn && settings.lineUrl) {
+      contactBtn.setAttribute("href", settings.lineUrl);
+      contactBtn.setAttribute("target", "_blank");
+      contactBtn.setAttribute("rel", "noopener noreferrer");
+    }
+  }
+
+  async function loadSanitySettings() {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      const settings = data.result;
+
+      if (!settings) {
+        console.warn("Sanity 尚未找到網站內容設定資料");
+        return;
+      }
+
+      window.xiyueSiteSettings = settings;
+
+      setBackground(".hero-visual", settings.heroImageUrl, true);
+      setBackground(".maison-card", settings.atelierImageUrl, true);
+      setBackground(".collection-image.jade", settings.jadeCollectionImageUrl);
+      setBackground(".collection-image.gem", settings.gemCollectionImageUrl);
+      setBackground(".collection-image.gold", settings.goldCollectionImageUrl);
+      setBackground(".collection-image.bridal", settings.bridalCollectionImageUrl);
+      setBackground(".material-feature", settings.materialsImageUrl, true);
+
+      updateContact(settings);
+    } catch (error) {
+      console.error("Sanity 資料讀取失敗：", error);
+    }
+  }
+
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      setTimeout(() => {
+        updateContact(window.xiyueSiteSettings);
+      }, 0);
+    });
+  });
+
+  loadSanitySettings();
+</script>
 </body>
 </html>
